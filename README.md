@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Nivora Living — Vue npm Test Store
 
 A redesigned Vue 3 + Vite ecommerce test website for Twinalyze npm integration.
@@ -141,3 +142,6 @@ Use Network → Fetch/XHR for init, identify, and eventsBatch. Use Application �
 2). Add twinalyze script in main.js
 3). Add identify properties in signupView
 4). Add manual event in cartView
+=======
+# twinalyze-analytics-websdk-demo-vuejs
+>>>>>>> 82efcdcae3c5fcfcb6979fa5bad1a667a138445e

@@ -7,7 +7,7 @@ import './styles.css';
 
 TwinalyzeAnalytics.init({
   apiKey: 'ADD YOUR API KEY HERE',
-  secretKey: 'ADD YOUR SECRET KEY HERE',
+  clientId: 'ADD YOUR CLIENT ID HERE',
 
   fcm: {
     enabled: true,

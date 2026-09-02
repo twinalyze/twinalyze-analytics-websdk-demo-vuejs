@@ -6,7 +6,7 @@ import '../../src/styles.css';
 
 TwinalyzeAnalytics.init({
   apiKey:'YOUR_API_KEY',
-  secretKey:'YOUR_SECRET_KEY',
+  clientId:'YOUR_CLIENT_ID',
   apiBaseUrl:'https://api.twinalyze.com',
   version:'YOUR_SDK_VERSION',
   debug:true,

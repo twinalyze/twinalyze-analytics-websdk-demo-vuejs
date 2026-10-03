@@ -1,0 +1,14 @@
+<script setup>import TwinalyzeAnalytics from '@twinalyze/web-analytics';
+import {ref} from 'vue';
+import {useRouter} from 'vue-router';
+import {useAuth} from '../stores/auth';
+const router=useRouter(),auth=useAuth(),name=ref('Nivora Tester'),email=ref('tester@example.com'),password=ref('password123');
+const submit=()=>{const u=auth.signup({name:name.value,email:email.value});
+TwinalyzeAnalytics.identify(u.email,
+{name:u.name,
+internalUserId:u.id,
+accountType:'customer',authenticationEvent:'signup',signupSource:'nivora_vue_npm_store',signupDate:u.createdAt});
+router.push('/account');};
+</script>
+<template><section class="auth"><div class="visual"><span>NIVORA MEMBERSHIP</span><h1>A more considered everyday starts here.</h1><div><b>◒</b><small>IDENTIFY / SIGNUP</small></div></div><form @submit.prevent="submit"><span>CREATE ACCOUNT</span><h2>Join the studio.</h2><label>Full name<input v-model="name" name="name" required/></label><label>Email<input v-model="email" name="email" type="email" required/></label><label>Password<input v-model="password" name="password" type="password" required/></label><button>Create account</button><p>Already registered? <RouterLink to="/login">Login</RouterLink></p></form></section></template>
+<style scoped>.auth{min-height:700px;padding:58px 7vw;display:grid;grid-template-columns:1fr 460px;gap:68px;align-items:center}.visual{min-height:570px;padding:43px;display:flex;flex-direction:column;border-radius:36px;background:var(--coral)}.visual>span,form>span{font-size:10px;font-weight:900;letter-spacing:.18em}.visual h1{margin:22px 0;font:400 clamp(54px,7vw,92px)/.9 Georgia}.visual>div{width:230px;height:245px;margin:auto 0 0 auto;display:grid;place-items:center;border-radius:26px;background:rgba(255,253,248,.7);transform:rotate(5deg)}.visual b{font:400 110px Georgia}.visual small{font-size:9px;font-weight:900}form{padding:34px;border:1px solid var(--line);border-radius:28px;background:#fffdf8}form>span{color:var(--coral-dark)}form h2{margin:10px 0 27px;font:400 46px Georgia}label{display:block;margin-bottom:16px;font-size:12px;font-weight:900}input{width:100%;box-sizing:border-box;margin-top:7px;padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--page);font:inherit}button{width:100%;padding:15px;border:0;border-radius:999px;background:var(--ink);color:white;font-weight:900}form p{text-align:center;color:var(--muted)}form a{color:var(--coral-dark);font-weight:900}@media(max-width:850px){.auth{grid-template-columns:1fr;padding-inline:20px}}</style>
